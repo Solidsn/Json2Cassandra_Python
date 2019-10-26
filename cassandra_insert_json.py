@@ -18,9 +18,10 @@ def run():
     arg = parser.parse_args()
     cluster = Cluster([arg.host],port=int(arg.port)) 
     session = cluster.connect()
-    session.execute(f"USE {arg.keyspace}")
+    session.execute("USE {}".format(arg.keyspace))
     with open(arg.file) as f:
         for document in f:
+            document = document.replace("'","")
             session.execute("""
                             insert into {} JSON '{}'
                             """.format(arg.table,document))
