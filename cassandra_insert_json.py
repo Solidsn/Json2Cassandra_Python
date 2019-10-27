@@ -21,12 +21,12 @@ def run():
     session.execute("USE {}".format(arg.keyspace))
     with open(arg.file) as f:
         for document in f:
-            document = document.replace("'","")
+            document = document.replace("'","''")
             session.execute("""
                             insert into {} JSON '{}'
                             """.format(arg.table,document))
 
 
-
+print("JSON inserted succefully on {} table".format(arg.table))
 if __name__ == '__main__':
     run()
