@@ -1,6 +1,6 @@
-# cassandra_python_json
+# JsonFile2Cassandra
 
-Simple script to insert json format to Cassandra
+Simple script to insert json format to Cassandra with python
 
 First use
 ```bash
@@ -9,10 +9,10 @@ source venv/bin/activate
 
 Syntax
 ```bash
-python cassandra_insert_json.py --host [Host] --port [Port] --keyspace [Keyspace name] --table [Table name] --file [File.json]
+python Json2Cassandra.py [-host <host>] [-port <port>] [-keyspace <keyspace>] [-table <table>] [file]
 ```
 
 Example
 ```bash 
-python cassandra_insert_json.py --host 0.0.0.0 --port 3000 --keyspace movies --table artists --file data.json
+python Json2Cassandra.py -host 0.0.0.0 -port 3000 -keyspace movies -table artists -file data.json
 ```
