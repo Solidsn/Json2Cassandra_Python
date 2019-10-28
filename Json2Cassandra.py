@@ -27,6 +27,6 @@ def run():
                             """.format(arg.table,document))
 
 
-print("JSON inserted succefully on {} table".format(arg.table))
+    print("JSON inserted succefully on {} table".format(arg.table))
 if __name__ == '__main__':
     run()
